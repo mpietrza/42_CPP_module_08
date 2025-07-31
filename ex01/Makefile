@@ -6,7 +6,7 @@
 #    By: mpietrza <mpietrza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/14 18:29:35 by mpietrza          #+#    #+#              #
-#    Updated: 2025/07/30 14:26:04 by mpietrza         ###   ########.fr        #
+#    Updated: 2025/07/31 14:56:10 by mpietrza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,9 @@ C = "\033[36m"
 W = "\033[37m"
 
 #SOURCES
-SRC		= main.cpp /
-		  Span.cpp
+SRC		= Span.cpp \
+		  main.cpp
+		  
 		  
 OBJS	= $(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 

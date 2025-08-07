@@ -6,7 +6,7 @@
 #    By: mpietrza <mpietrza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/14 18:29:35 by mpietrza          #+#    #+#              #
-#    Updated: 2025/08/04 16:21:22 by mpietrza         ###   ########.fr        #
+#    Updated: 2025/08/07 15:58:38 by mpietrza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,7 @@ C = "\033[36m"
 W = "\033[37m"
 
 #SOURCES
-SRC		= MutatedAbomination.cpp \
-		  main.cpp
+SRC		= main.cpp
 		  
 		  
 OBJS	= $(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))

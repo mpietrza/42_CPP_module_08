@@ -6,7 +6,7 @@
 /*   By: mpietrza <mpietrza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 16:52:46 by mpietrza          #+#    #+#             */
-/*   Updated: 2025/07/31 17:00:22 by mpietrza         ###   ########.fr       */
+/*   Updated: 2025/08/08 16:07:16 by mpietrza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 //#include <string> 
 #include <cstdlib> // strtoul, atoi
 #include <climits> // 
+#include <vector>
 
 int main(int argc, char **argv) {
 	if (argc != 2) {
@@ -34,27 +35,30 @@ int main(int argc, char **argv) {
 	unsigned int range = static_cast<unsigned int>(rangeLong);
 	
 	Span span(range);
-	if (range <= 10000) {
-	std::cout << "The random numbers in the given quantity are:" << std::endl;
-	}
-	else {
-		std::cout << "Too many numbers to display." << std::endl
-		<< "The span will be calculated without printing the numbers." << std::endl;
-	}
-	srand(time(0));
-	int	number = 0;
 
+	std::vector<int> randoms;
+	srand(time(0));
 	for (unsigned int i = 0; i < range; ++i) {
-		number = rand();
-		if (range <= 10000) {
-			std::cout << number;
+		int number = rand();
+		randoms.push_back(number);
+	}
+
+	if (range <= 10000) {
+		std::cout << "The random numbers in the given quantity are:" << std::endl;
+		for (unsigned int i = 0; i < randoms.size(); ++i) {
+			std::cout << randoms[i];
 			if ((i + 1) % 10 == 0)
 				std::cout << std::endl;
 			else
 				std::cout << " ";
 		}
-		span.addNumber(number);
+	} else {
+		std::cout << "Too many numbers to display." << std::endl
+				  << "The span will be calculated without printing the numbers." << std::endl;
 	}
+
+	// Use addNumbers to fill the Span
+	span.addNumbers(randoms.begin(), randoms.end());
 
 	std::cout << std::endl;
 	try {

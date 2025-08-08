@@ -6,7 +6,7 @@
 /*   By: mpietrza <mpietrza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 14:26:15 by mpietrza          #+#    #+#             */
-/*   Updated: 2025/08/08 16:03:09 by mpietrza         ###   ########.fr       */
+/*   Updated: 2025/08/08 16:13:49 by mpietrza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,7 @@ class Span
 		unsigned int shortestSpan();
 		unsigned int longestSpan();
 
-		template <typename T>
-		void addNumbers(T begin, T end) {
-			for (T it = begin; it != end; ++it) {
-				addNumber(static_cast<int>(*it));
-			}
-		}	
+		void addNumbers(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end);
 };
 
 #endif

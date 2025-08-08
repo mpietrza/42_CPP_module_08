@@ -6,7 +6,7 @@
 /*   By: mpietrza <mpietrza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 15:29:46 by mpietrza          #+#    #+#             */
-/*   Updated: 2025/07/30 16:50:44 by mpietrza         ###   ########.fr       */
+/*   Updated: 2025/08/08 16:13:36 by mpietrza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,9 @@ unsigned int Span::longestSpan() {
 	return max - min;
 }
 
+void Span::addNumbers(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end)
+{
+	for (std::vector<int>::const_iterator it = begin; it != end; ++it) {
+		addNumber(*it);
+	}
+}
